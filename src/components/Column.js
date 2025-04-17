@@ -1,12 +1,7 @@
 import React from 'react';
 import Task from './Task';
 
-function Column({ name }) {
-  const tasks = [
-    { id: 1, name: 'Task1', user: 'Anna' },
-    { id: 2, name: 'Task2', user: 'Marcin' },
-  ];
-
+function Column({ name, tasks }) {
   return (
     <div>
       <h3>{name}</h3>

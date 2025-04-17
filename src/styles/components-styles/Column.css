@@ -1,0 +1,21 @@
+.column {
+  background-color: #3c3c3c;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.column__title {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #fff;
+  justify-self: center;
+}
+
+.column__tasks {
+  display: flex;
+  background-color: #6a6565;
+  padding: 10px;
+  flex-direction: column;
+  gap: 10px;
+  border-radius: 8px;
+}

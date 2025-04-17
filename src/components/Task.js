@@ -1,10 +1,13 @@
 import React from 'react';
 
+import '../styles/components-styles/Task.css'
+
 function Task({ name, user }) {
   return (
-    <div>
-      <strong>{name}</strong> - {user}
-    </div>
+    <ul className='task'>
+      <li className='task__name'>{name}</li> 
+      <li className='task__user'>{user}</li>
+    </ul>
   );
 }
 

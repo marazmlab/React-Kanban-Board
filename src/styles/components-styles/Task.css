@@ -1,0 +1,19 @@
+.task {
+  background-color: #4c4c4c;
+  padding: 10px;
+  border-radius: 4px;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+
+.task__name {
+  font-weight: bold;
+}
+
+.task__user {
+  font-size: 0.9rem;
+  color: #ccc;
+}

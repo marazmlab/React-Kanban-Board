@@ -9,6 +9,7 @@
   flex-direction: column;
   gap: 10px;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .column__title {
@@ -24,7 +25,9 @@
   flex-direction: column;
   gap: 10px;
   border-radius: 8px;
-  /* overflow-y: auto; */
+  overflow-y: auto;
   max-height: 400px;
   padding-right: 5px;
+  margin: 0;
+  padding: 0; 
 }

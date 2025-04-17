@@ -7,11 +7,11 @@ function Column({ name, tasks }) {
   return (
     <div className='column'>
       <h3 className='column__title'>{name}</h3>
-      <div className='column__tasks'>
+      <ul className='column__tasks'>
         {tasks.map((task) => (
           <Task key={task.id} name={task.name} user={task.user} />
         ))}
-      </div>
+      </ul>
     </div>
   );
 }

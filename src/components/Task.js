@@ -4,10 +4,10 @@ import '../styles/components-styles/Task.css'
 
 function Task({ name, user }) {
   return (
-    <ul className='task'>
-      <li className='task__name'>{name}</li> 
-      <li className='task__user'>{user}</li>
-    </ul>
+    <li className='task'>
+      <p className='task__name'>{name}</p> 
+      <p className='task__user'>{user}</p>
+    </li>
   );
 }
 

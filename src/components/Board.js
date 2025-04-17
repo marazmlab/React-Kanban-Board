@@ -5,16 +5,17 @@ import '../styles/components-styles/Board.css'
 import { BoardContext } from './BoardContext';
 
 function Board() {
-  const { columns, moveTask} = useContext(BoardContext);
+  const { columns } = useContext(BoardContext);
   
   return (
     <div className='board'>
-      <button className='board__button' onClick={() => moveTask(1, 1, 2)}>
-        MOVE TASK 1 TO COLUMN 2
-      </button>
       <div className='board__columns'>
         {columns.map((column) => (
-          <Column key={column.id} name={column.name} tasks={column.tasks}/>
+          <Column
+           key={column.id} 
+           id={column.id}
+           name={column.name} 
+           tasks={column.tasks}/>
         ))}
       </div>
     </div>

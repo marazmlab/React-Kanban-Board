@@ -1,12 +1,13 @@
 import React from 'react';
 import Board from './components/Board';
+import { BoardProvider } from './components/BoardContext';
 
 function App() {
   return (
-    <div>
+    <BoardProvider>
       <Board />
-    </div>
-  )
+    </BoardProvider>
+  );
 }
 
 export default App;

@@ -16,12 +16,14 @@ function Task({ id, name, user, columnId }) {
         <button
           className='task__button'
           onClick={() => moveTask(id, columnId, columnId -1)}
+          disabled={columnId === 1}
         >
           ←
         </button>
         <button
           className='task__button'
           onClick={() => moveTask(id, columnId, columnId + 1)}
+          disabled={columnId === 3}
         >
           →
         </button>

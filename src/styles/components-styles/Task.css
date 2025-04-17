@@ -39,3 +39,8 @@
 .task__button:hover {
   background-color: #973838;
 }
+
+.task__button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}

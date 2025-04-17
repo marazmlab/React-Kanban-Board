@@ -32,4 +32,6 @@ function Task({ id, name, user, columnId }) {
   );
 }
 
+
+
 export default Task;

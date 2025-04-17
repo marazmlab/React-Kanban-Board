@@ -13,8 +13,7 @@ export const BoardProvider = ({ children }) => {
 
   const [columns, setColumns] = useState(() => {
     return (
-      loadColumnsFromLocalStorage() ||
-      [
+      loadColumnsFromLocalStorage() || [
         {
           id: 1,
           name: 'Pending',
@@ -22,7 +21,7 @@ export const BoardProvider = ({ children }) => {
           tasks: [
             { id: 1, name: 'Task1', user: 'Anna' },
             { id: 2, name: 'Task2', user: 'Marcin' },
-            { id: 5, name: 'Task5', user: 'Lusia' },
+            { id: 5, name: 'Task2', user: 'Marcin' },
           ],
         },
         {
@@ -45,28 +44,32 @@ export const BoardProvider = ({ children }) => {
     setColumns((prevColumns) => {
       const fromColumn = prevColumns.find((col) => col.id === fromColumnId);
       const toColumn = prevColumns.find((col) => col.id === toColumnId);
-
+  
       if (!toColumn) {
         console.error(`Column with id ${toColumnId} does not exist.`);
         return prevColumns;
       }
-
+  
       if (toColumn.tasks.length >= toColumn.limit) {
-        console.error(`Column '${toColumn.name}' has reached limit of tasks`);
+        console.error(`Column '${toColumn.name}' has reached its task limit.`);
         return prevColumns;
       }
-
+  
       const taskIndex = fromColumn.tasks.findIndex((task) => task.id === taskId);
-      if (taskIndex === -1) return prevColumns;
-
+      if (taskIndex === -1) {
+        console.error(`Task with id ${taskId} does not exist in column '${fromColumn.name}'.`);
+        return prevColumns;
+      }
+  
       const [task] = fromColumn.tasks.splice(taskIndex, 1);
       toColumn.tasks.push(task);
-
+  
       return [...prevColumns];
     });
   };
 
   useEffect(() => {
+    console.log('Saving columns to localStorage:', columns);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(columns));
   }, [columns]);
 

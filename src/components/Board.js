@@ -27,9 +27,27 @@ function Board() {
     },
   ]);
 
+  const moveTask = (taskId, fromColumnId, toColumnId) => {
+    setColumns((prevColumns) => {
+      const fromColumn = prevColumns.find((col) => col.id === fromColumnId);
+      const toColumn = prevColumns.find((col) => col.id === toColumnId);
+
+      const taskIndex = fromColumn.tasks.findIndex((task) => task.id === taskId);
+      if (taskIndex === -1) return prevColumns;
+
+      const [task] = fromColumn.tasks.splice(taskIndex, 1);
+      toColumn.tasks.push(task);
+
+      return [...prevColumns];
+    });
+  };
+
   return (
     <div>
       <h2>Board</h2>
+      <button onClick={() => moveTask(1, 1, 2)}>
+        MOVE TASK 1 TO COLUMN 2
+      </button>
       {columns.map((column) => (
         <Column key={column.id} name={column.name} tasks={column.tasks}/>
       ))}

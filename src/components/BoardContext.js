@@ -28,11 +28,13 @@ export const BoardProvider = ({ children }) => {
         {
           id: 2,
           name: 'Doing',
+          limit: 4,
           tasks: [{ id: 3, name: 'Task3', user: 'Milo' }],
         },
         {
           id: 3,
           name: 'Done',
+          limit: 4,
           tasks: [{ id: 4, name: 'Task4', user: 'Daniel' }],
         },
       ]

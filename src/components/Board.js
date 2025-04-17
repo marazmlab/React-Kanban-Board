@@ -14,6 +14,7 @@ function Board() {
           <Column
            key={column.id} 
            id={column.id}
+           limit={column.limit}
            name={column.name} 
            tasks={column.tasks}/>
         ))}

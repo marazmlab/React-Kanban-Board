@@ -7,13 +7,35 @@
   justify-content: space-between;
   align-items: center;
   color: #fff;
+  min-height: 60px;
 }
 
 .task__name {
   font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 150px;
+
 }
 
 .task__user {
   font-size: 0.9rem;
-  color: #ccc;
+}
+
+.task__actions {
+  display: flex;
+  gap: 5px;
+}
+
+.task__button {
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.task__button:hover {
+  background-color: #973838;
 }

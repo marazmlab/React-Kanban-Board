@@ -2,6 +2,13 @@
   background-color: #3c3c3c;
   padding: 20px;
   border-radius: 8px;
+  flex: 1;
+  max-width: 300px;
+  min-width: 200px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow: hidden;
 }
 
 .column__title {
@@ -13,9 +20,11 @@
 
 .column__tasks {
   display: flex;
-  background-color: #6a6565;
   padding: 10px;
   flex-direction: column;
   gap: 10px;
   border-radius: 8px;
+  /* overflow-y: auto; */
+  max-height: 400px;
+  padding-right: 5px;
 }

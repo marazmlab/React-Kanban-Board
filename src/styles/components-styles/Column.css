@@ -2,9 +2,9 @@
   background-color: #3c3c3c;
   padding: 20px;
   border-radius: 8px;
-  flex: 1;
-  max-width: 300px;
-  min-width: 200px;
+  flex: 1 1 300px;
+  max-width: 300px; 
+  min-width: 300px; 
   display: flex;
   flex-direction: column;
   gap: 10px;

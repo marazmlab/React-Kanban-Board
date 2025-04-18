@@ -12,6 +12,11 @@ function Form() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    if (columns.find((col) => col.id === selectedColumn).tasks.length >= columns.find((col) => col.id === selectedColumn).limit) {
+      alert(`Column '${columns.find((col) => col.id === selectedColumn).name}' has reached its task limit.`);
+      return;
+    }
+
     if (!taskName.trim() || !taskUser.trim()) {
       alert('Please fill in all fields');
       return;

@@ -5,7 +5,6 @@ export const BoardContext = createContext();
 const LOCAL_STORAGE_KEY = 'kanban';
 
 export const BoardProvider = ({ children }) => {
-  
   const loadColumnsFromLocalStorage = () => {
     const storedColumns = localStorage.getItem(LOCAL_STORAGE_KEY);
     return storedColumns ? JSON.parse(storedColumns) : null;
@@ -69,12 +68,11 @@ export const BoardProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    console.log('Saving columns to localStorage:', columns);
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(columns));
   }, [columns]);
 
   return (
-    <BoardContext.Provider value={{ columns, moveTask }}>
+    <BoardContext.Provider value={{ columns, setColumns, moveTask }}>
       {children}
     </BoardContext.Provider>
   );

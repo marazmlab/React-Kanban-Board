@@ -1,5 +1,6 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import Column from './Column';
+import Form from './Form';
 
 import '../styles/components-styles/Board.css'
 import { BoardContext } from './BoardContext';
@@ -9,6 +10,7 @@ function Board() {
   
   return (
     <div className='board'>
+      <Form />
       <div className='board__columns'>
         {columns.map((column) => (
           <Column

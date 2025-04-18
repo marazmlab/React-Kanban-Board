@@ -36,11 +36,17 @@
   border-radius: 4px;
 }
 
-.task__button:hover {
-  background-color: #973838;
+.task__button:disabled {
+  color: #ffffff23;
+  background-color: #66666625;
+  cursor: auto;
 }
 
-.task__button:disabled {
-  background-color: #666;
-  cursor: not-allowed;
+.task__button--delete {
+  background-color: #973838;
+  color: #fff;
+}
+
+.task__button--delete:hover {
+  background-color: #b94a4a;
 }

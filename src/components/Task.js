@@ -4,7 +4,7 @@ import { BoardContext } from "./BoardContext";
 import '../styles/components-styles/Task.css'
 
 function Task({ id, name, user, columnId }) {
-  const { moveTask } = useContext(BoardContext);
+  const { moveTask, deleteTask } = useContext(BoardContext);
 
   return (
     <li className='task'>
@@ -26,6 +26,12 @@ function Task({ id, name, user, columnId }) {
           disabled={columnId === 3}
         >
           →
+        </button>
+        <button
+          className="task__button task__button--delete"
+          onClick={() => deleteTask(id, columnId)}
+        >
+          X
         </button>
       </div>
     </li>

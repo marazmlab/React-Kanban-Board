@@ -67,12 +67,28 @@ export const BoardProvider = ({ children }) => {
     });
   };
 
+  const deleteTask = (taskId, columnId) => {
+    setColumns((prevColumns) => {
+      const updatedColumns = prevColumns.map((column) => {
+        if (column.id === columnId) {
+          return {
+            ...column,
+            tasks: column.tasks.filter((task) => task.id !== taskId),
+          };
+        }
+        return column;
+      });
+
+      return updatedColumns;
+    });
+  };
+
   useEffect(() => {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(columns));
   }, [columns]);
 
   return (
-    <BoardContext.Provider value={{ columns, setColumns, moveTask }}>
+    <BoardContext.Provider value={{ columns, setColumns, moveTask, deleteTask }}>
       {children}
     </BoardContext.Provider>
   );

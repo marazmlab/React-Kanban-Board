@@ -8,6 +8,13 @@
   align-items: start;
 }
 
+@media (max-width: 999px) {
+  .form {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}
+
 .form__group {
   display: flex;
   flex-direction: column;
@@ -31,7 +38,6 @@
 
 .form__button {
   grid-column: span 3;
-  /* background-color: #767059;s */
   color: #fff;
   border: 1px solid #767059 ;
   padding: 10px 20px;
